@@ -26,20 +26,27 @@ mean = lesser_m
 
 while max_steps != 0:
     max_steps -= 1
+    print(max_steps)
     num_of_same = 0
     for i in range(len(nums)):
         if nums[i] > mean:
+            print(max_steps, "   -   ")
             nums[i] -= 1
+            break
         elif nums[i] < mean:
+            print(max_steps, "   +   ")
             nums[i] += 1
+            break
         else:
+            print(nums)
+            print(f"nums[i] = {nums[i]}")
             num_of_same += 1
     if num_of_same == len(nums):
         break
 
-# print(nums)
+print(nums)
 if max_steps != 0:
-    print(20 - max_steps)
+    print(20 - max_steps + 1)
 else:
     print("20 ходов недостаточно для приведения всех элементов массива к одному числу")
 
